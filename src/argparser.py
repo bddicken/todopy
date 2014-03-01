@@ -1,10 +1,11 @@
 import argparse
 
 OptionsParser = argparse.ArgumentParser()
-OptionsParser.add_argument('--remove', '-r', default='none', required=False, help="delete entry")
-OptionsParser.add_argument('--add', '-a', default='none', required=False, help="add entry")
+OptionsParser.add_argument('--remove', '-r', default=False, action='store_true', required=False, help="remove")
 OptionsParser.add_argument('--category', '-c', default='none', required=False, help="add to category")
-OptionsParser.add_argument('--listtd', '-l', default='none', required=False, help="list")
+OptionsParser.add_argument('--item', '-i', default='none', required=False, help="add to item")
+OptionsParser.add_argument('--add', '-a', default=False, action='store_true', required=False, help="add")
+OptionsParser.add_argument('--listtd', '-l', default=False, action='store_true', required=False, help="list")
 args = OptionsParser.parse_args()
 
 def PrintOptions():

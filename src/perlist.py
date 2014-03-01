@@ -2,14 +2,6 @@ from datetime import timedelta, datetime
 import json
 
 #
-# support enum in python 2.7
-#
-def enum(**enums):
-    return type('Enum', (), enums)
-
-#PowerState = enum(ON=1, TURNINGON=2, GOINGTOIDLE=3, COMINGFROMIDLE=4, IDLE=5, TURNINGOFF=6, OFF=7)
-
-#
 # PerList class
 #
 class PerList:
@@ -29,7 +21,31 @@ class PerList:
     
     def persistList(self):
         JSONString = json.dumps(self.JSONList)
-            JSONFile = open(self.persistentListFileName, ")
+        JSONFile = open(self.persistentListFileName, "w")
         JSONFile.write(JSONString)
         JSONFile.close()
+
+    def showList(self):
+        for k1, v1 in self.JSONList["list"].iteritems():
+            print "\n---------------------"
+            print "category: " + k1
+            for k2, v2 in v1.iteritems():
+                print "    " + v2
+        print "\n"
+
+    def addCategory(self, category):
+        if not self.JSONList["list"].has_key(category):
+            self.JSONList["list"][category] = {}
+
+    def addItemToCategory(self, category, item):
+        if not self.JSONList["list"].has_key(category):
+            self.JSONList["list"][category] = {}
+        self.JSONList["list"][category][item] = item
+
+    def removeCategory(self, category):
+        del self.JSONList["list"][category]
+
+    def removeItemFromCategory(self, category, item):
+        del self.JSONList["list"][category][item]
+        pass
 
