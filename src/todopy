@@ -1,7 +1,0 @@
-#!/bin/sh
-
-#
-# Script to run an installed copy of todopy
-#
-
-python /usr/bin/todopy-source/src/main.py $@

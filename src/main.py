@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from perlist import PerList
 import sys
 from argparser import args, PrintOptions
