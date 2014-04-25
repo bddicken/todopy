@@ -38,9 +38,6 @@ def main():
                 plist.removeCategory(args.category)
 
     plist.persistList()
-    
-    print "bye"
-
 
 if __name__ == "__main__":
     main()

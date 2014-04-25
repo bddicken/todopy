@@ -13,7 +13,6 @@ class PerList:
     def __init__(self, listName):
         path = os.path.dirname(os.path.abspath(__file__))
         self.persistentListFileName = path + "/list.json"
-        print self.persistentListFileName
         self.JSONList = []
 
     def loadList(self):
