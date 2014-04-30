@@ -51,7 +51,7 @@ class PerList:
                 self.JSONList["list"][category] = {}
             self.JSONList["list"][category][item] = item
         except:
-            print "adding item '" + args.item + "' from category '" + args.category + "' failed."
+            print "adding item '" + item + "' from category '" + category + "' failed."
 
     def removeCategory(self, category):
         try:
@@ -63,5 +63,5 @@ class PerList:
         try:
             del self.JSONList["list"][category][item]
         except:
-            print "removing item '" + args.item + "' from category '" + args.category + "' failed."
+            print "removing item '" + item + "' from category '" + category + "' failed."
 

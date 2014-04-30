@@ -38,6 +38,9 @@ def main():
             else:
                 print "removing category '" + args.category + "'"
                 plist.removeCategory(args.category)
+    
+    if args.listtd == False and args.add == False and args.remove == False:
+        plist.showList()
 
     plist.persistList()
 
